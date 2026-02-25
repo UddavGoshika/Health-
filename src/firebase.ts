@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 // Replace these with your actual Firebase project configuration
 // You can find this in your Firebase Console: Project Settings -> General -> Your apps
 const firebaseConfig = {
-    apiKey: "AIzaSyBkFmvuKeD6nEB4nNCtMh8e6u3TSC72ilE",
+    apiKey: "",
     authDomain: "advocate-890ae.firebaseapp.com",
     projectId: "advocate-890ae",
     storageBucket: "advocate-890ae.firebasestorage.app",
