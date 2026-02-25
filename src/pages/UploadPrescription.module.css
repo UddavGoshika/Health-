@@ -1,0 +1,424 @@
+/* UploadPrescription.module.css */
+
+.pageContainer {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.6rem 0;
+}
+
+.subtitle {
+  color: #475569;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contentWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ────────────────────────────────────────────────
+   Upload Section
+───────────────────────────────────────────────── */
+
+.uploadSection {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.sectionTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+.uploadOptions {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.uploadCard {
+  flex: 1;
+  min-width: 160px;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.uploadCard:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.iconWrapper {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.uploadLabel {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: block;
+}
+
+/* ────────────────────────────────────────────────
+   Attached Prescription Section
+───────────────────────────────────────────────── */
+
+.attachedSection {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.6rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.attachedHeader {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.2rem;
+}
+
+.noPrescription {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #64748b;
+  padding: 2rem 1rem;
+}
+
+.noPrescription p:first-child {
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+  font-weight: 500;
+}
+
+.noPrescriptionSub {
+  font-size: 0.92rem;
+  margin: 0 0 1.4rem;
+  color: #94a3b8;
+}
+
+.uploadNowBtn {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.uploadNowBtn:hover {
+  background: #0284c7;
+  transform: translateY(-1px);
+}
+
+/* Preview when file is selected */
+.previewContainer {
+  position: relative;
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  max-height: 340px;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pdfPlaceholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  text-align: center;
+  padding: 2rem;
+}
+
+.pdfPlaceholder p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  word-break: break-all;
+  color: #475569;
+}
+
+.clearBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s;
+}
+
+.clearBtn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* ────────────────────────────────────────────────
+   Booking Details (Sidebar)
+───────────────────────────────────────────────── */
+
+.bookingDetails {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.detailsHeader {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.detailLabel {
+  font-weight: 500;
+  color: #334155;
+}
+
+.actionLink {
+  background: none;
+  border: none;
+  color: #0ea5e9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionLink:hover {
+  text-decoration: underline;
+}
+
+/* ────────────────────────────────────────────────
+   Proceed Button
+───────────────────────────────────────────────── */
+
+.proceedBtn {
+  margin-top: 2.5rem;
+  width: 100%;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.22s ease;
+}
+
+.proceedBtn:hover {
+  background: #0284c7;
+  transform: translateY(-1px);
+}
+
+.proceedBtn.disabled,
+.proceedBtn[disabled] {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.proceedBtn.disabled:hover {
+  background: #cbd5e1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .uploadOptions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bookingDetails {
+    position: static;
+  }
+}
+/* ────────────────────────────────────────────────
+   Detail Item with Icon
+───────────────────────────────────────────────── */
+
+.detailLabelWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.detailIcon {
+  color: #64748b;
+}
+
+/* ────────────────────────────────────────────────
+   Simple Modal Styles
+───────────────────────────────────────────────── */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modalTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.modalInput,
+.modalInput textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  resize: vertical;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.modalCancel {
+  background: #e2e8f0;
+  color: #475569;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modalCancel:hover {
+  background: #cbd5e1;
+}
+
+.modalSave {
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modalSave:hover {
+  background: #0284c7;
+}

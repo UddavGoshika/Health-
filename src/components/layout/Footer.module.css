@@ -1,0 +1,189 @@
+/* Footer.module.css - Professional Healthcare Footer */
+
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 56px 80px 28px;
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ================= LINKS ================= */
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  margin-bottom: 8px;
+}
+
+.column a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.column a:hover {
+  color: #006400;
+}
+
+/* ================= BRANDING ================= */
+
+.brandingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 40px;
+}
+
+.brandBox {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+
+.brandBox span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.6px;
+}
+
+.brandLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.brandLogo {
+  height: 28px;        /* 🔑 key fix */
+  max-width: 80px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* ================= APP + SOCIAL ================= */
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.storeButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.storeBtn {
+  background: #111827;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.storeBtn img {
+  height: 28px;      /* 🔑 key fix */
+  display: block;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.social:hover {
+  background: #e5e7eb;
+  color: #006400;
+}
+
+/* ================= BOTTOM ================= */
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 24px 0 14px;
+}
+
+.bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .linksGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .brandingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

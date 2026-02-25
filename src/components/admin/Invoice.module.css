@@ -1,0 +1,247 @@
+.invoiceOuterContainer {
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    min-height: 800px;
+}
+
+.watermarkText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 80px;
+    font-weight: 900;
+    color: #000;
+    opacity: 0.03;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    text-transform: uppercase;
+}
+
+.invoiceWrapper {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: #000;
+    font-family: 'Outfit', 'Segoe UI', Arial, sans-serif;
+    padding: 40px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.invoiceWrapper h1,
+.invoiceWrapper h2,
+.invoiceWrapper h3,
+.invoiceWrapper h4,
+.invoiceWrapper h5,
+.invoiceWrapper h6 {
+    font-family: inherit !important;
+    color: #000 !important;
+}
+
+.invoiceWrapper p,
+.invoiceWrapper span,
+.invoiceWrapper strong,
+.invoiceWrapper div,
+.invoiceWrapper td,
+.invoiceWrapper th {
+    color: #000 !important;
+    font-family: inherit !important;
+}
+
+.topLogoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    /* background: #000; */
+    color: black;
+    padding: 15px 25px;
+    border-radius: 4px;
+}
+
+.invoiceLogoImg {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.invoiceTitleContainer {
+    text-align: right;
+    color: #040404;
+}
+
+.mainTitle {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.subTitle {
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    color: #000;
+}
+
+.addressesGrid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.addressBlock {
+    width: 48%;
+}
+
+.blockHeading {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+    color: #000;
+}
+
+.sellerName,
+.buyerName {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.metaInfoGrid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.metaInfoGrid p {
+    margin: 3px 0;
+}
+
+.amazonTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.amazonTable th {
+    background: #f4f4f4;
+    border: 1px solid #333;
+    padding: 8px 6px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 800;
+    color: #000;
+}
+
+.amazonTable td {
+    border: 1px solid #333;
+    padding: 10px 6px;
+    vertical-align: top;
+}
+
+.itemMajor {
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+}
+
+.itemMinor {
+    font-size: 9px;
+    color: #000;
+    margin-top: 2px;
+}
+
+.itemValidity {
+    font-size: 10px;
+    color: #000;
+    margin-top: 5px;
+    border-top: 1px dashed #000;
+    padding-top: 5px;
+}
+
+.packageLabel {
+    font-weight: 800;
+    font-size: 12px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.totalRow td {
+    border-top: 2px solid #000;
+    background: #f9f9f9;
+    font-weight: 700;
+}
+
+.totalText {
+    text-align: left;
+}
+
+.amountWordsRow {
+    border: 1px solid #000;
+    padding: 12px;
+    margin-bottom: 30px;
+}
+
+.signatureRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.signRight {
+    text-align: right;
+    width: 220px;
+}
+
+.sellerStamp {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.signImg {
+    max-height: 45px;
+}
+
+.authorized {
+    font-weight: 700;
+    border-top: 1px solid #333;
+    display: inline-block;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.bottomDisclaimer {
+    font-size: 9px;
+    color: #000;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.pageNumber {
+    text-align: right;
+    margin-top: 10px;
+}
+
+@media print {
+    .invoiceOuterContainer {
+        min-height: auto;
+    }
+
+    .topLogoRow {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        /* background-color: #000 !important; */
+    }
+
+    .whiteLogoText {
+        color: #fff !important;
+    }
+
+    .watermarkText {
+        opacity: 0.05 !important;
+    }
+}

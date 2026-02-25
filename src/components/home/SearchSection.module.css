@@ -1,0 +1,657 @@
+.searchSection {
+    padding: 3rem 1.5rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    /* background: linear-gradient(135deg, #006400 0%, #0a4d0a 100%); */
+    /* -webkit-background-clip: text; */
+    color: rgb(5, 5, 5);
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #5f6368;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 150, 0.08);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.titleIcon {
+    color: #006400;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #006400;
+    margin: 0;
+}
+
+/* ID Search */
+.idSearch {
+    display: flex;
+    align-items: center;
+    background: #f0fdf4;
+    border-radius: 12px;
+    padding: 0.5rem;
+    border: 2px solid #dcfce7;
+    min-width: 300px;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.searchIcon {
+    color: #5f6368;
+    margin: 0 0.75rem;
+    flex-shrink: 0;
+}
+
+.idInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.875rem 0;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    min-width: 0;
+}
+
+.idInput::placeholder {
+    color: #999;
+}
+
+.idSearchBtn {
+    background: linear-gradient(135deg, #006400 0%, #0a4d0a 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.idSearchBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.3);
+}
+
+/* Filter Bar */
+.filterBar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.selectWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+}
+
+.selectWrapper select {
+    width: 100%;
+    height: 56px;
+    padding: 1rem 1.25rem;
+    padding-right: 2.5rem;
+    border: 2px solid #dcfce7;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.selectWrapper select:focus {
+    outline: none;
+    border-color: #006400;
+    box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+}
+
+.selectWrapper select:disabled {
+    background: #f0fdf4;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.chevron {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5f6368;
+    pointer-events: none;
+}
+
+.filterActions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.applyBtn {
+    background: linear-gradient(135deg, #006400 0%, #0a4d0a 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-width: 180px;
+    height: 56px;
+}
+
+.applyBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.3);
+}
+
+.applyBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.clearBtn {
+    background: #6b97ad;
+    color: #5f6368;
+    border: 2px solid #dadce0;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 56px;
+}
+
+.clearBtn:hover {
+    background: #e8eaed;
+    border-color: #c4c7d0;
+}
+
+/* Results Grid - Picture Style */
+.resultsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.profileCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.profileCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #006400;
+}
+
+.cardHeaderSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.profileInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.nameSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profileName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #006400;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.locationInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5f6368;
+    font-size: 0.9rem;
+}
+
+.locationInfo svg {
+    color: #757575;
+}
+
+.experienceBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.experienceBadge svg {
+    color: #2e7d32;
+}
+
+.idBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #dcfce7;
+    color: #006400;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.idBadge svg {
+    color: #006400;
+}
+
+.practiceSection {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 4px solid #006400;
+}
+
+.practiceLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #757575;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.practiceValue {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Action Grid - Picture Style */
+.actionGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.actionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.actionButton svg {
+    transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.interest:hover {
+    background: #d4edda;
+    border-color: #2e7d32;
+}
+
+.interest:hover svg {
+    color: #2e7d32;
+}
+
+.superInterest {
+    background: #fff3e0;
+    color: #f57c00;
+    border: 1px solid #ffe0b2;
+}
+
+.superInterest:hover {
+    background: #ffe8cc;
+    border-color: #f57c00;
+}
+
+.superInterest:hover svg {
+    color: #f57c00;
+}
+
+.shortlist {
+    background: #dcfce7;
+    color: #006400;
+    border: 1px solid #bbf7d0;
+}
+
+.shortlist:hover {
+    background: #bbf7d0;
+    border-color: #006400;
+}
+
+.shortlist:hover svg {
+    color: #006400;
+}
+
+.chat {
+    background: #f3e5f5;
+    color: #7b1fa2;
+    border: 1px solid #e1bee7;
+}
+
+.chat:hover {
+    background: #e8d4ff;
+    border-color: #7b1fa2;
+}
+
+.chat:hover svg {
+    color: #7b1fa2;
+}
+
+/* Loading Container */
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    gap: 1rem;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: #006400;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* No Results */
+.noResults {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    text-align: center;
+    gap: 1rem;
+}
+
+.noResultsIcon {
+    color: #dadce0;
+    margin-bottom: 1rem;
+}
+
+.noResults h3 {
+    font-size: 1.5rem;
+    color: #5f6368;
+    margin: 0;
+}
+
+.noResults p {
+    color: #999;
+    margin: 0;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.notifIcon {
+    color: #006400;
+    flex-shrink: 0;
+}
+
+.notifText {
+    color: #333;
+    font-weight: 500;
+}
+
+.notification.success {
+    border-left: 4px solid #4caf50;
+}
+
+.notification.info {
+    border-left: 4px solid #006400;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .filterBar {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .resultsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .cardHeader {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .idSearch {
+        max-width: 100%;
+    }
+
+    .filterBar {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .searchSection {
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .filterBar {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .resultsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .profileCard {
+        max-width: 100%;
+    }
+
+    .filterActions {
+        flex-direction: column;
+    }
+
+    .applyBtn,
+    .clearBtn {
+        width: 100%;
+    }
+
+    .actionGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchSection {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: 16px;
+    }
+
+    .idSearch {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .idInput {
+        width: 100%;
+    }
+
+    .idSearchBtn {
+        width: 100%;
+    }
+
+    .profileCard {
+        padding: 1rem;
+    }
+
+    .cardHeaderSection {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .idBadge {
+        align-self: flex-start;
+    }
+
+    .actionButton {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.7rem;
+    }
+}

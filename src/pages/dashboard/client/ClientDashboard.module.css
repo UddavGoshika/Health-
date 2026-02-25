@@ -1,0 +1,300 @@
+.clientdashboard {
+    display: flex;
+    height: 100vh;
+    background: #0a0c10;
+    position: relative;
+    overflow: hidden;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.mainContentclientdash {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.03), transparent);
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(15, 20, 26, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    gap: 15px;
+}
+
+.topBarLeft {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pageTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageTitle span {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.newsTicker {
+    flex: 1;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px;
+    z-index: 50;
+}
+
+.tickerText {
+    white-space: nowrap;
+    position: absolute;
+    animation: tickerMove 20s linear infinite;
+    color: #facc15 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 100%;
+}
+
+@keyframes tickerMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Ensure ticker doesn't overlap on very small screens */
+@media (max-width: 900px) {
+    .newsTicker {
+        display: none;
+    }
+}
+
+.topBarRight {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notificationBtn {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.notificationBtn:hover {
+    color: #d4af37;
+}
+
+.contentBody {
+    flex: 1;
+    padding: 30px;
+    padding-bottom: 150px;
+    position: relative;
+    min-height: calc(100vh - 80px);
+    /* Ensure enough height for overlay */
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+.toast {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #1e293b;
+    border-left: 4px solid #d4af37;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contentBody {
+        padding: 20px;
+    }
+}
+
+.caseActions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.caseActions button {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badgeStack {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.planBadge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fbfbfc;
+    padding: 4px 14px;
+    border-radius: 6px;
+    letter-spacing: 1.2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+.planBadge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    color: #fbfbfc;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.freeBadge {
+    background: rgba(100, 116, 139, 0.1);
+    color: #fbfbfc;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+.liteBadge {
+    background: linear-gradient(135deg, #a0a0a0 0%, #707070 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.proBadge {
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #d4af37 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(184, 134, 11, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 800;
+}
+
+.ultraBadge {
+    background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    font-weight: 900;
+    animation: goldPulse 3s infinite ease-in-out;
+}
+
+@keyframes goldPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        border-color: #ffd700;
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+        border-color: #ffffff;
+    }
+}

@@ -1,0 +1,233 @@
+.page {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.headerSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.backLink:hover {
+    color: #facc15;
+}
+
+.planInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.accountLabel {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.planBadge {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 50px;
+    letter-spacing: 1.8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: default;
+}
+
+.planBadge:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.verifiedBadgeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.premiumSeal {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Plan Specific Seal Colors */
+.liteBadge .sealMain,
+.liteBadge .sealRibbons {
+    fill: #3b82f6;
+}
+
+.proBadge .sealMain,
+.proBadge .sealRibbons {
+    fill: #facc15;
+}
+
+.ultraBadge .sealMain,
+.ultraBadge .sealRibbons {
+    fill: #6366f1;
+}
+
+.freeBadge {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+}
+
+.liteBadge {
+    background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.proBadge {
+    background: linear-gradient(135deg, #92400e 0%, #78350f 100%);
+    border-color: rgba(250, 204, 21, 0.3);
+    color: #fef08a;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+}
+
+.ultraBadge {
+    background: linear-gradient(135deg, #312e81 0%, #1e1b4b 100%);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+}
+
+.searchSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 30px;
+}
+
+.searchContainer {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardSearchInput {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 100px 12px 20px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.dashboardSearchInput:focus {
+    border-color: #facc15;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.searchBtnInside {
+    position: absolute;
+    right: 5px;
+    background: #facc15;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.filterSelect {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 15px;
+    color: #cbd5e1;
+    font-size: 14px;
+    min-width: 140px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.submitBtnDashboard {
+    background: #facc15;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .searchSection {
+        flex-direction: column;
+    }
+
+    .filterSelect {
+        width: 100%;
+    }
+}

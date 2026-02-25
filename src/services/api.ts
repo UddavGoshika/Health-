@@ -1,0 +1,93 @@
+import axios from 'axios';
+import type { AuthResponse, Case, Advocate, Doctor } from '../types';
+
+export interface ClientProfile {
+    id: string;
+    unique_id: string;
+    name: string;
+    location: string;
+    experience: string;
+    specialization: string;
+    img: string;
+}
+
+const api = axios.create({
+    baseURL: '/api',
+});
+
+export const authService = {
+    login: (credentials: any) => api.post<AuthResponse>('/auth/login', credentials),
+    register: (data: any) => api.post<AuthResponse>('/auth/register', data),
+    registerClient: (data: any) => api.post<AuthResponse>('/client/register', data),
+    registerAdvocate: (data: any) => api.post<AuthResponse>('/advocate/register', data),
+    sendOtp: (email: string) => api.post<any>('/auth/send-otp', { email }),
+    verifyOtp: (email: string, otp: string) => api.post<any>('/auth/verify-otp', { email, otp }),
+    forgotPassword: (email: string) => api.post<any>('/auth/forgot-password', { email }),
+    resetPassword: (data: any) => api.post<any>('/auth/reset-password', data),
+};
+
+export const advocateService = {
+    getAdvocates: (filters: {
+        search?: string,
+        language?: string,
+        specialization?: string,
+        subSpecialization?: string,
+        court?: string,
+        state?: string,
+        district?: string,
+        city?: string,
+        experience?: string,
+        consultationMode?: string
+    } = {}) =>
+        api.get<{ success: boolean; advocates: Advocate[] }>('/advocates', { params: filters }),
+    getAdvocateById: (id: number | string) =>
+        api.get<{ success: boolean; advocate: Advocate }>(`/advocates/${id}`),
+};
+
+export const clientService = {
+    getClients: (filters: {
+        search?: string,
+        language?: string,
+        category?: string,
+        specialization?: string,
+        subDepartment?: string,
+        city?: string,
+        state?: string,
+        district?: string,
+        consultationMode?: string
+    } = {}) =>
+        api.get<{ success: boolean; clients: ClientProfile[] }>('/client', { params: filters }),
+};
+
+export const doctorService = {
+    getDoctors: (filters: {
+        search?: string,
+        language?: string,
+        department?: string,
+        specialization?: string,
+        state?: string,
+        district?: string,
+        city?: string,
+        experience?: string,
+        consultationFee?: string,
+        consultationMode?: string
+    } = {}) =>
+        api.get<{ success: boolean; doctors: Doctor[] }>('/doctors', { params: filters }),
+    getDoctorById: (id: number | string) =>
+        api.get<{ success: boolean; doctor: Doctor }>(`/doctors/${id}`),
+};
+
+export const adminService = {
+    onboardStaff: (data: any) => api.post<{ success: boolean; message: string; userId: string; mailSent: boolean }>('/admin/onboard-staff', data),
+};
+
+export const caseService = {
+    getCases: (userId?: number | string) =>
+        api.get<{ cases: Case[] }>('/cases', { params: { userId } }),
+    fileCase: (caseData: any) =>
+        api.post<{ message: string; caseId: number }>('/cases', caseData),
+    getMetrics: (userId: number | string) =>
+        api.get<any>('/metrics', { params: { userId } }),
+};
+
+export default api;

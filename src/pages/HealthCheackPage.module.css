@@ -1,0 +1,67 @@
+.page {
+  padding: 20px;
+}
+
+.breadcrumb {
+  margin-bottom: 16px;
+  color: #666;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+.filters {
+  width: 250px;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.filters label {
+  display: block;
+  margin: 10px 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price span {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 6px;
+}
+
+.card button {
+  margin-top: 10px;
+  background: #0b7285;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
